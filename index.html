@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>何梦诚 — 个人主页</title>
+  <style>
+    /* === CSS Custom Properties === */
+    :root {
+      --bg: #f8f9fa;
+      --surface: #ffffff;
+      --primary: #1a3a5c;
+      --accent: #2563eb;
+      --text: #1f2937;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --radius: 8px;
+      --max-width: 960px;
+      --nav-height: 60px;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-padding-top: var(--nav-height); }
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+
+    /* === Navbar === */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-height);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+    }
+    .navbar-inner {
+      max-width: var(--max-width); width: 100%; margin: 0 auto;
+      padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.25rem; font-weight: 700; color: var(--primary);
+    }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a {
+      font-size: 0.9rem; color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+    /* Mobile nav toggle */
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--primary); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: var(--nav-height); left: 0; right: 0; background: white; padding: 16px 24px; border-bottom: 1px solid var(--border); gap: 12px; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+    }
+
+    /* === Section Common === */
+    section { padding: 80px 24px; }
+    .container { max-width: var(--max-width); margin: 0 auto; }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 1.75rem; color: var(--primary);
+      margin-bottom: 32px; padding-bottom: 12px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+    .card {
+      background: var(--surface); border-radius: var(--radius);
+      padding: 28px; box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    /* === Hero === */
+    #hero {
+      padding-top: calc(var(--nav-height) + 80px);
+      padding-bottom: 80px;
+      background: linear-gradient(160deg, var(--primary) 0%, #0f2b47 60%, #1a4a7a 100%);
+      color: #ffffff;
+    }
+    .hero-inner {
+      display: flex; align-items: center; gap: 48px;
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+    }
+    .hero-photo {
+      width: 160px; height: 160px; border-radius: 50%;
+      background: rgba(255,255,255,0.15); border: 3px solid rgba(255,255,255,0.3);
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; color: rgba(255,255,255,0.6);
+      text-align: center; line-height: 1.4;
+    }
+    .hero-text h1 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem; font-weight: 700; margin-bottom: 4px;
+    }
+    .hero-text .hero-name-en {
+      font-size: 1.05rem; color: rgba(255,255,255,0.7);
+      margin-bottom: 12px;
+    }
+    .hero-text .hero-affiliation {
+      font-size: 1.1rem; margin-bottom: 8px;
+    }
+    .hero-text .hero-tagline {
+      font-size: 0.95rem; color: rgba(255,255,255,0.75);
+      max-width: 520px; line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .hero-inner { flex-direction: column; text-align: center; gap: 24px; }
+      .hero-photo { width: 120px; height: 120px; }
+      .hero-text h1 { font-size: 1.8rem; }
+    }
+
+    /* === Research Interests === */
+    .research-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    }
+    .research-card {
+      background: var(--surface); border-radius: var(--radius);
+      padding: 28px; box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--accent);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .research-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .research-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem; color: var(--primary); margin-bottom: 8px;
+    }
+    .research-card p {
+      font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;
+    }
+    .research-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    @media (max-width: 768px) {
+      .research-grid { grid-template-columns: 1fr; }
+    }
+
+    /* === Education Timeline === */
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 8px; top: 4px; bottom: 4px;
+      width: 2px; background: var(--border);
+    }
+    .timeline-item { position: relative; margin-bottom: 36px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute; left: -28px; top: 4px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--accent); border: 3px solid var(--bg);
+    }
+    .timeline-period {
+      display: inline-block; font-size: 0.8rem; font-weight: 600;
+      color: var(--accent); background: #eff6ff; padding: 2px 10px;
+      border-radius: 12px; margin-bottom: 6px;
+    }
+    .timeline-degree {
+      font-family: var(--font-heading);
+      font-size: 1.15rem; color: var(--primary); margin-bottom: 2px;
+    }
+    .timeline-school { font-size: 0.95rem; color: var(--text); }
+    .timeline-detail { font-size: 0.88rem; color: var(--text-muted); margin-top: 2px; }
+    @media (max-width: 768px) {
+      .timeline { padding-left: 24px; }
+      .timeline-dot { left: -20px; }
+    }
+
+    /* === Publications === */
+    .pub-list { display: flex; flex-direction: column; gap: 18px; }
+    .pub-item {
+      background: var(--surface); border-radius: var(--radius);
+      padding: 24px 28px; box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .pub-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .pub-number {
+      flex-shrink: 0; width: 32px; height: 32px;
+      background: var(--primary); color: #fff; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700;
+    }
+    .pub-content { flex: 1; }
+    .pub-authors { font-size: 0.9rem; color: var(--text); }
+    .pub-authors .pub-self { font-weight: 700; color: var(--primary); }
+    .pub-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem; color: var(--primary); margin: 4px 0;
+      font-style: italic;
+    }
+    .pub-journal { font-size: 0.88rem; color: var(--text-muted); }
+    .pub-doi {
+      display: inline-block; margin-top: 8px;
+      font-size: 0.82rem; color: var(--accent);
+      border: 1px solid var(--accent); padding: 3px 12px;
+      border-radius: 14px; transition: background 0.2s, color 0.2s;
+    }
+    .pub-doi:hover { background: var(--accent); color: #fff; text-decoration: none; }
+    .pub-doi[href=""] { display: none; }
+    .pub-type {
+      display: inline-block; font-size: 0.75rem; font-weight: 600;
+      background: #dbeafe; color: var(--accent); padding: 2px 8px;
+      border-radius: 4px; margin-bottom: 4px;
+    }
+
+    /* === Honors === */
+    .honors-group { margin-bottom: 24px; }
+    .honors-year {
+      font-family: var(--font-heading);
+      font-size: 1.1rem; color: var(--accent); margin-bottom: 8px;
+    }
+    .honors-list { list-style: none; padding: 0; }
+    .honors-list li {
+      padding: 8px 0 8px 20px; position: relative;
+      font-size: 0.93rem; color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    .honors-list li:last-child { border-bottom: none; }
+    .honors-list li::before {
+      content: '✦'; position: absolute; left: 0; top: 8px;
+      color: var(--accent); font-size: 0.7rem;
+    }
+
+    /* === Skills === */
+    .skills-container { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skill-tag {
+      display: inline-block; padding: 8px 20px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; font-size: 0.9rem; color: var(--primary);
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .skill-tag:hover {
+      background: #eff6ff; border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* === Contact === */
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    }
+    .contact-item {
+      background: var(--surface); border-radius: var(--radius);
+      padding: 24px; box-shadow: var(--shadow-sm);
+      display: flex; align-items: center; gap: 16px;
+    }
+    .contact-icon {
+      font-size: 1.5rem; width: 44px; height: 44px;
+      background: #eff6ff; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-label { font-size: 0.78rem; color: var(--text-muted); }
+    .contact-value { font-size: 0.95rem; color: var(--text); }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    /* === Scroll Animations === */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    footer {
+      text-align: center; padding: 32px 24px;
+      font-size: 0.85rem; color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="nav-logo">何梦诚</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="#hero">首页</a></li>
+        <li><a href="#research">研究方向</a></li>
+        <li><a href="#education">教育经历</a></li>
+        <li><a href="#publications">科研成果</a></li>
+        <li><a href="#honors">荣誉奖项</a></li>
+        <li><a href="#skills">技能</a></li>
+        <li><a href="#contact">联系方式</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero">
+      <div class="hero-inner">
+        <div class="hero-photo">照片<br>Photo</div>
+        <div class="hero-text">
+          <h1>何梦诚</h1>
+          <p class="hero-name-en">Mengcheng He</p>
+          <p class="hero-affiliation">武汉理工大学 · 土木工程与建筑学院</p>
+          <p class="hero-tagline">研究方向：结构抗震分析 · 单层网壳 · 地震易损性评估</p>
+        </div>
+      </div>
+    </section>
+    <!-- Research -->
+    <section id="research">
+      <div class="container">
+        <h2 class="section-title">研究方向</h2>
+        <div class="research-grid">
+          <div class="research-card fade-in">
+            <div class="research-icon">🏗️</div>
+            <h3>结构抗震分析</h3>
+            <p>基于性能的地震工程方法，研究结构体系在地震作用下的响应机理与损伤演化规律。</p>
+          </div>
+          <div class="research-card fade-in">
+            <div class="research-icon">🔬</div>
+            <h3>单层网壳结构</h3>
+            <p>大跨空间结构的力学性能研究，重点关注不同矢跨比下的地震易损性差异。</p>
+          </div>
+          <div class="research-card fade-in">
+            <div class="research-icon">📊</div>
+            <h3>地震易损性评估</h3>
+            <p>概率地震需求分析与强度参数选取方法，建立结构-地震动耦合评估框架。</p>
+          </div>
+          <div class="research-card fade-in">
+            <div class="research-icon">💻</div>
+            <h3>数值模拟与计算</h3>
+            <p>基于 OpenSees 与 MATLAB 的有限元建模、非线性动力时程分析与参数化研究。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Education -->
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">教育经历</h2>
+        <div class="timeline">
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot"></div>
+            <span class="timeline-period">2024.09 — 至今</span>
+            <h3 class="timeline-degree">硕士研究生 · 土木工程</h3>
+            <p class="timeline-school">武汉理工大学 · 土木工程与建筑学院</p>
+            <p class="timeline-detail">导师：——  研究方向：结构抗震</p>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot"></div>
+            <span class="timeline-period">2020.09 — 2024.06</span>
+            <h3 class="timeline-degree">工学学士 · 土木工程</h3>
+            <p class="timeline-school">武汉理工大学 · 土木工程与建筑学院</p>
+            <p class="timeline-detail">专业排名 11/131</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Publications -->
+    <section id="publications">
+      <div class="container">
+        <h2 class="section-title">科研成果</h2>
+
+        <h3 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 18px; margin-top: 8px; font-size: 1.15rem;">📄 期刊论文</h3>
+        <div class="pub-list">
+          <div class="pub-item fade-in">
+            <div class="pub-number">1</div>
+            <div class="pub-content">
+              <span class="pub-type">Journal Article</span>
+              <p class="pub-authors">Tingting Liu, <span class="pub-self">Mengcheng He</span>, Yantai Zhang*, et al.</p>
+              <p class="pub-title">Seismic vulnerability analysis of single-layer lattice shells with different rise-to-span ratios: focusing on the selection of Sa(T₁)-based intensity measures</p>
+              <p class="pub-journal"><em>Structures</em>, 2024, 65: 106671</p>
+              <a class="pub-doi" href="" target="_blank" rel="noopener">DOI 🔗</a>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 18px; margin-top: 36px; font-size: 1.15rem;">📜 专利</h3>
+        <div class="pub-list">
+          <div class="pub-item fade-in">
+            <div class="pub-number">2</div>
+            <div class="pub-content">
+              <span class="pub-type">发明专利</span>
+              <p class="pub-title">—— 专利名称 ——</p>
+              <p class="pub-journal">专利号：CN202210972248.9 · 2022-11-04</p>
+            </div>
+          </div>
+          <div class="pub-item fade-in">
+            <div class="pub-number">3</div>
+            <div class="pub-content">
+              <span class="pub-type">实用新型专利</span>
+              <p class="pub-title">—— 专利名称 ——</p>
+              <p class="pub-journal">专利号：CN202222132375.6 · 2023-03-24</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Honors -->
+    <section id="honors">
+      <div class="container">
+        <h2 class="section-title">荣誉奖项</h2>
+        <div class="honors-group">
+          <h3 class="honors-year">2024</h3>
+          <ul class="honors-list">
+            <li>—— 荣誉/奖项名称 ——</li>
+          </ul>
+        </div>
+        <div class="honors-group">
+          <h3 class="honors-year">2023</h3>
+          <ul class="honors-list">
+            <li>—— 荣誉/奖项名称 ——</li>
+          </ul>
+        </div>
+        <div class="honors-group">
+          <h3 class="honors-year">2022</h3>
+          <ul class="honors-list">
+            <li>—— 荣誉/奖项名称 ——</li>
+          </ul>
+        </div>
+        <div class="honors-group">
+          <h3 class="honors-year">2021</h3>
+          <ul class="honors-list">
+            <li>—— 荣誉/奖项名称 ——</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">技能</h2>
+        <div class="skills-container">
+          <span class="skill-tag">MATLAB</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">OpenSees</span>
+          <span class="skill-tag">Tcl</span>
+          <span class="skill-tag">有限元分析</span>
+          <span class="skill-tag">数值模拟</span>
+        </div>
+      </div>
+    </section>
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">联系方式</h2>
+        <div class="contact-grid">
+          <div class="contact-item fade-in">
+            <div class="contact-icon">📧</div>
+            <div>
+              <p class="contact-label">邮箱</p>
+              <a class="contact-value" href="mailto:hemengcheng@whut.edu.cn">hemengcheng@whut.edu.cn</a>
+            </div>
+          </div>
+          <div class="contact-item fade-in">
+            <div class="contact-icon">📱</div>
+            <div>
+              <p class="contact-label">电话</p>
+              <p class="contact-value">181-8622-7517</p>
+            </div>
+          </div>
+          <div class="contact-item fade-in">
+            <div class="contact-icon">🎓</div>
+            <div>
+              <p class="contact-label">Google Scholar</p>
+              <a class="contact-value" href="" target="_blank" rel="noopener">Google Scholar 主页</a>
+            </div>
+          </div>
+          <div class="contact-item fade-in">
+            <div class="contact-icon">🏫</div>
+            <div>
+              <p class="contact-label">地址</p>
+              <p class="contact-value">湖北省武汉市 · 武汉理工大学</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 何梦诚 (Mengcheng He). All rights reserved.</p>
+    <p style="margin-top: 4px; font-size: 0.8rem;">Built with ❤️ &middot; Deployed on GitHub Pages</p>
+  </footer>
+
+  <script>
+    // === Mobile Nav Toggle ===
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      var navLinks = document.querySelector('.nav-links');
+      if (!toggle || !navLinks) return;
+      toggle.addEventListener('click', function() {
+        var isOpen = navLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+      });
+      document.querySelectorAll('.nav-links a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          navLinks.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+
+    // === Scroll-triggered fade-in ===
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>
