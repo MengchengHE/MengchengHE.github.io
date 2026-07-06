@@ -249,21 +249,6 @@
       transform: translateY(-1px);
     }
 
-    /* === Contact === */
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
-    }
-    .contact-item {
-      background: var(--surface); border-radius: var(--radius);
-      padding: 24px; box-shadow: var(--shadow-sm);
-      display: flex; align-items: center; gap: 16px;
-    }
-    .contact-label { font-size: 0.78rem; color: var(--text-muted); }
-    .contact-value { font-size: 0.95rem; color: var(--text); }
-    @media (max-width: 768px) {
-      .contact-grid { grid-template-columns: 1fr; }
-    }
-
     /* === Scroll Animations === */
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -288,7 +273,6 @@
         <li><a href="#publications">科研成果</a></li>
         <li><a href="#honors">荣誉奖项</a></li>
         <li><a href="#skills">技能</a></li>
-        <li><a href="#contact">联系方式</a></li>
       </ul>
     </div>
   </nav>
@@ -435,38 +419,6 @@
           <span class="skill-tag">Tcl</span>
           <span class="skill-tag">有限元分析</span>
           <span class="skill-tag">数值模拟</span>
-        </div>
-      </div>
-    </section>
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">联系方式</h2>
-        <div class="contact-grid">
-          <div class="contact-item fade-in">
-            <div>
-              <p class="contact-label">邮箱</p>
-              <a class="contact-value" href="mailto:hemengcheng@whut.edu.cn">hemengcheng@whut.edu.cn</a>
-            </div>
-          </div>
-          <div class="contact-item fade-in">
-            <div>
-              <p class="contact-label">电话</p>
-              <p class="contact-value">181-8622-7517</p>
-            </div>
-          </div>
-          <div class="contact-item fade-in">
-            <div>
-              <p class="contact-label">Google Scholar</p>
-              <a class="contact-value" href="" target="_blank" rel="noopener">Google Scholar 主页</a>
-            </div>
-          </div>
-          <div class="contact-item fade-in">
-            <div>
-              <p class="contact-label">地址</p>
-              <p class="contact-value">湖北省武汉市 · 武汉理工大学</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
