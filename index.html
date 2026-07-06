@@ -146,7 +146,6 @@
     .research-card p {
       font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;
     }
-    .research-icon { font-size: 1.5rem; margin-bottom: 8px; }
     @media (max-width: 768px) {
       .research-grid { grid-template-columns: 1fr; }
     }
@@ -232,8 +231,9 @@
     }
     .honors-list li:last-child { border-bottom: none; }
     .honors-list li::before {
-      content: '✦'; position: absolute; left: 0; top: 8px;
-      color: var(--accent); font-size: 0.7rem;
+      content: ''; position: absolute; left: 0; top: 12px;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
     }
 
     /* === Skills === */
@@ -257,12 +257,6 @@
       background: var(--surface); border-radius: var(--radius);
       padding: 24px; box-shadow: var(--shadow-sm);
       display: flex; align-items: center; gap: 16px;
-    }
-    .contact-icon {
-      font-size: 1.5rem; width: 44px; height: 44px;
-      background: #eff6ff; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
     }
     .contact-label { font-size: 0.78rem; color: var(--text-muted); }
     .contact-value { font-size: 0.95rem; color: var(--text); }
@@ -307,9 +301,9 @@
         <div class="hero-text">
           <h1>何梦诚</h1>
           <p class="hero-name-en">Mengcheng He</p>
-          <p class="hero-affiliation">📧 hemengcheng@whut.edu.cn &nbsp;|&nbsp; 📱 181-8622-7517</p>
+          <p class="hero-affiliation">hemengcheng@whut.edu.cn &nbsp;|&nbsp; 181-8622-7517</p>
           <p class="hero-tagline">
-            <a href="https://orcid.org/0009-0006-9236-2368" target="_blank" rel="noopener" style="color: #a5f3fc;">🔗 ORCID: 0009-0006-9236-2368</a>
+            <a href="https://orcid.org/0009-0006-9236-2368" target="_blank" rel="noopener" style="color: #a5f3fc;">ORCID: 0009-0006-9236-2368</a>
           </p>
         </div>
       </div>
@@ -320,22 +314,18 @@
         <h2 class="section-title">研究方向</h2>
         <div class="research-grid">
           <div class="research-card fade-in">
-            <div class="research-icon">🏗️</div>
             <h3>结构抗震分析</h3>
             <p>基于性能的地震工程方法，研究结构体系在地震作用下的响应机理与损伤演化规律。</p>
           </div>
           <div class="research-card fade-in">
-            <div class="research-icon">🔬</div>
             <h3>单层网壳结构</h3>
             <p>大跨空间结构的力学性能研究，重点关注不同矢跨比下的地震易损性差异。</p>
           </div>
           <div class="research-card fade-in">
-            <div class="research-icon">📊</div>
             <h3>地震易损性评估</h3>
             <p>概率地震需求分析与强度参数选取方法，建立结构-地震动耦合评估框架。</p>
           </div>
           <div class="research-card fade-in">
-            <div class="research-icon">💻</div>
             <h3>数值模拟与计算</h3>
             <p>基于 OpenSees 与 MATLAB 的有限元建模、非线性动力时程分析与参数化研究。</p>
           </div>
@@ -369,7 +359,7 @@
       <div class="container">
         <h2 class="section-title">科研成果</h2>
 
-        <h3 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 18px; margin-top: 8px; font-size: 1.15rem;">📄 期刊论文</h3>
+        <h3 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 18px; margin-top: 8px; font-size: 1.15rem;">期刊论文</h3>
         <div class="pub-list">
           <div class="pub-item fade-in">
             <div class="pub-number">1</div>
@@ -383,7 +373,7 @@
           </div>
         </div>
 
-        <h3 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 18px; margin-top: 36px; font-size: 1.15rem;">📜 专利</h3>
+        <h3 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 18px; margin-top: 36px; font-size: 1.15rem;">专利</h3>
         <div class="pub-list">
           <div class="pub-item fade-in">
             <div class="pub-number">2</div>
@@ -454,28 +444,24 @@
         <h2 class="section-title">联系方式</h2>
         <div class="contact-grid">
           <div class="contact-item fade-in">
-            <div class="contact-icon">📧</div>
             <div>
               <p class="contact-label">邮箱</p>
               <a class="contact-value" href="mailto:hemengcheng@whut.edu.cn">hemengcheng@whut.edu.cn</a>
             </div>
           </div>
           <div class="contact-item fade-in">
-            <div class="contact-icon">📱</div>
             <div>
               <p class="contact-label">电话</p>
               <p class="contact-value">181-8622-7517</p>
             </div>
           </div>
           <div class="contact-item fade-in">
-            <div class="contact-icon">🎓</div>
             <div>
               <p class="contact-label">Google Scholar</p>
               <a class="contact-value" href="" target="_blank" rel="noopener">Google Scholar 主页</a>
             </div>
           </div>
           <div class="contact-item fade-in">
-            <div class="contact-icon">🏫</div>
             <div>
               <p class="contact-label">地址</p>
               <p class="contact-value">湖北省武汉市 · 武汉理工大学</p>
@@ -488,7 +474,7 @@
 
   <footer>
     <p>&copy; 2026 何梦诚 (Mengcheng He). All rights reserved.</p>
-    <p style="margin-top: 4px; font-size: 0.8rem;">Built with ❤️ &middot; Deployed on GitHub Pages</p>
+    <p style="margin-top: 4px; font-size: 0.8rem;">Built with &middot; Deployed on GitHub Pages</p>
   </footer>
 
   <script>
