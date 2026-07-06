@@ -157,6 +157,35 @@
       background: var(--surface); border-radius: var(--radius);
       box-shadow: var(--shadow-sm);
     }
+    /* Stacked layout: image above text */
+    .research-point-stack {
+      grid-template-columns: 1fr;
+    }
+    .research-point-stack .point-hero-stack {
+      margin-bottom: 20px; text-align: center;
+    }
+    .research-point-stack .point-hero-stack img {
+      max-width: 100%; height: auto; border-radius: 4px;
+    }
+    .research-point-stack .point-hero-stack .fig-caption {
+      font-size: 0.82rem; color: var(--text-muted);
+      margin-top: 6px; font-style: italic;
+    }
+    .point-hero-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 20px; margin-bottom: 20px;
+    }
+    .point-hero-row .point-hero-item {
+      background: var(--bg); border-radius: var(--radius);
+      padding: 8px; text-align: center;
+    }
+    .point-hero-row .point-hero-item img {
+      width: 100%; height: auto; border-radius: 4px;
+    }
+    .point-hero-row .point-hero-item .fig-caption {
+      font-size: 0.8rem; color: var(--text-muted);
+      margin-top: 6px; font-style: italic;
+    }
     .research-point h4 {
       font-family: var(--font-heading);
       font-size: 1.08rem; color: var(--primary);
@@ -220,6 +249,7 @@
     @media (max-width: 768px) {
       .research-point { grid-template-columns: 1fr; gap: 20px; padding: 18px 16px; }
       .point-thumbs { grid-template-columns: 1fr 1fr; }
+      .point-hero-row { grid-template-columns: 1fr; }
     }
 
     /* === Education Timeline === */
@@ -400,31 +430,33 @@
           </div>
 
           <!-- 研究点 1 -->
-          <div class="research-point">
+          <div class="research-point research-point-stack">
+            <div class="point-hero-stack">
+              <img src="images/grad_graphical_abstract.png" alt="IELSM 图形摘要" loading="lazy">
+              <p class="fig-caption">图形摘要：IELSM 整体研究框架与核心创新</p>
+            </div>
             <div class="point-left">
               <h4>研究点一：经典 LSM 的泊松比约束根源与新模型提出</h4>
-              <p>从应变能密度角度揭示 LSM 泊松比固定的本质——轴向弹簧单一本构导致体积模量 K⁰ 与剪切模量 G 耦合。提出 IELSM：在总应变能中引入附加体积模量 k<sup>(v)</sup>，直接修正体积变形刚度，实现两弹性参数的独立调控。导出 k<sup>(a)</sup>、k<sup>(v)</sup> 到宏观弹性常数 (E, ν) 的精确解析映射。</p>
+              <p>从应变能密度角度揭示 LSM 泊松比固定的本质——轴向弹簧单一本构导致体积模量 K⁰ 与剪切模量 G 耦合。提出 IELSM：在总应变能中引入附加体积模量 k<sup>v</sup>，直接修正体积变形刚度，实现两弹性参数的独立调控。导出 k<sup>n</sup>、k<sup>v</sup> 到宏观弹性常数 (E, ν) 的精确解析映射。</p>
               <div class="point-conclusion">
                 <span class="conc-label">主要结论</span>
-                <p>覆盖平面应力 −1&lt;ν&lt;1 与平面应变 −1&lt;ν&lt;0.5 全范围可调泊松比；k<sup>(v)</sup>=0 时退化回经典 LSM；严格满足应变能旋转不变性；不增加节点自由度，保持 LSM 计算高效的优势。</p>
-              </div>
-            </div>
-            <div class="point-right">
-              <div class="point-hero">
-                <img src="images/grad_fig2_ielsm_rve.png" alt="IELSM RVE" loading="lazy">
-                <p class="fig-caption">Fig.2：IELSM 代表性体积单元 — LSM 轴向弹簧 + 附加体积约束</p>
+                <p>覆盖平面应力 −1&lt;ν&lt;1 与平面应变 −1&lt;ν&lt;0.5 全范围可调泊松比；k<sup>v</sup>=0 时退化回经典 LSM；严格满足应变能旋转不变性；不增加节点自由度，保持 LSM 计算高效的优势。</p>
               </div>
             </div>
             <div class="point-thumbs">
-              <div class="thumb-item"><img src="images/grad_graphical_abstract.png" alt="图形摘要" loading="lazy"><p class="fig-caption">图形摘要：研究框架</p></div>
               <div class="thumb-item"><img src="images/grad/fig1_lsm.png" alt="经典LSM" loading="lazy"><p class="fig-caption">Fig.1：经典 LSM 轴向弹簧</p></div>
-              <div class="thumb-item"><img src="images/grad_fig3_bulk_modulus.png" alt="体积模量机制" loading="lazy"><p class="fig-caption">Fig.3：k<sup>(v)</sup> 调节机制</p></div>
+              <div class="thumb-item"><img src="images/grad_fig2_ielsm_rve.png" alt="IELSM RVE" loading="lazy"><p class="fig-caption">Fig.2：IELSM 代表性体积单元</p></div>
+              <div class="thumb-item"><img src="images/grad_fig3_bulk_modulus.png" alt="体积模量机制" loading="lazy"><p class="fig-caption">Fig.3：k<sup>v</sup> 调节机制</p></div>
               <div class="thumb-item"><img src="images/grad/fig4_rve_deform.png" alt="RVE变形" loading="lazy"><p class="fig-caption">Fig.4：RVE 变形示意</p></div>
             </div>
           </div>
 
           <!-- 研究点 2 -->
-          <div class="research-point">
+          <div class="research-point research-point-stack">
+            <div class="point-hero-stack">
+              <img src="images/grad_fig5_discretization.png" alt="数值离散化" loading="lazy">
+              <p class="fig-caption">Fig.5：附加体积约束的数值离散化 — 等效分解为 10 个标准力学组件</p>
+            </div>
             <div class="point-left">
               <h4>研究点二：数值离散化与有限元框架嵌入</h4>
               <p>将附加体积约束的 8×8 刚度矩阵精确等效分解为 10 个标准力学组件——轴向弹簧、剪切弹簧与转动弹簧的组合。通过直接刚度法实现全局装配，统一 LSM 体系与 FEM 标准流程。推导线性/双线性两种位移场假设下的应变-位移矩阵，开展特征值分析与总势能对比评估数值精度与稳定性。</p>
@@ -433,26 +465,28 @@
                 <p>IELSM 在泊松比全范围内刚度矩阵正定，有效抑制 CST 寄生剪切锁死和 Q4 沙漏零能模式。平面应力 ν&gt;0.6 或平面应变 ν&gt;0.375 时，IELSM 精度超越 Q4——因高泊松比下 Q4 出现零能模式退化而 IELSM 保持稳定。</p>
               </div>
             </div>
-            <div class="point-right">
-              <div class="point-hero">
-                <img src="images/grad_fig6ab_assembly.png" alt="刚度装配" loading="lazy">
-                <p class="fig-caption">Fig.6(a)(b)：单元刚度矩阵装配 — 轴向/剪切/转动弹簧组合</p>
-              </div>
-            </div>
             <div class="point-thumbs">
-              <div class="thumb-item"><img src="images/grad_fig5_discretization.png" alt="离散化" loading="lazy"><p class="fig-caption">Fig.5：10组件分解</p></div>
+              <div class="thumb-item"><img src="images/grad_fig6ab_assembly.png" alt="刚度装配" loading="lazy"><p class="fig-caption">Fig.6(a)(b)：刚度装配</p></div>
               <div class="thumb-item"><img src="images/grad/fig6c_assembly.png" alt="装配细节" loading="lazy"><p class="fig-caption">Fig.6(c)：转动弹簧装配</p></div>
-              <div class="thumb-item"><img src="images/grad/fig7_tri.png" alt="三角形" loading="lazy"><p class="fig-caption">Fig.7：三角形离散化</p></div>
-              <div class="thumb-item"><img src="images/grad/fig8_nodes.png" alt="节点" loading="lazy"><p class="fig-caption">Fig.8：单元节点编号</p></div>
-              <div class="thumb-item"><img src="images/grad/fig9_bc.png" alt="边界" loading="lazy"><p class="fig-caption">Fig.9：边界条件</p></div>
-              <div class="thumb-item"><img src="images/grad_fig10a_energy_ps.png" alt="能量(平面应力)" loading="lazy"><p class="fig-caption">Fig.10(a)：平面应力总势能</p></div>
-              <div class="thumb-item"><img src="images/grad_fig10b_energy_pe.png" alt="能量(平面应变)" loading="lazy"><p class="fig-caption">Fig.10(b)：平面应变总势能</p></div>
-              <div class="thumb-item"><img src="images/grad/figA1_appendix.png" alt="附录" loading="lazy"><p class="fig-caption">Fig.A1：LSM约束推导</p></div>
+              <div class="thumb-item"><img src="images/grad/fig7_tri.png" alt="应变场计算" loading="lazy"><p class="fig-caption">Fig.7：应变场计算方法</p></div>
+              <div class="thumb-item"><img src="images/grad/fig9_bc.png" alt="边界条件" loading="lazy"><p class="fig-caption">Fig.9：边界条件</p></div>
+              <div class="thumb-item"><img src="images/grad_fig10a_energy_ps.png" alt="总势能(平面应力)" loading="lazy"><p class="fig-caption">Fig.10(a)：平面应力总势能</p></div>
+              <div class="thumb-item"><img src="images/grad_fig10b_energy_pe.png" alt="总势能(平面应变)" loading="lazy"><p class="fig-caption">Fig.10(b)：平面应变总势能</p></div>
             </div>
           </div>
 
           <!-- 研究点 3 -->
-          <div class="research-point">
+          <div class="research-point research-point-stack">
+            <div class="point-hero-row">
+              <div class="point-hero-item">
+                <img src="images/grad/fig19_beam_mesh_v2.png" alt="梁离散化网格" loading="lazy">
+                <p class="fig-caption">Fig.19：简支梁四种数值模型的离散化方案对比（IELSM / Q4 / CST-1 / CST-2）</p>
+              </div>
+              <div class="point-hero-item">
+                <img src="images/grad_fig20_beam.png" alt="梁弯曲精度对比" loading="lazy">
+                <p class="fig-caption">Fig.20：简支梁底部竖向位移 — 6 种数值模型与 Euler-Bernoulli 解析解对比</p>
+              </div>
+            </div>
             <div class="point-left">
               <h4>研究点三：基准算例验证与断裂模拟应用</h4>
               <p>通过 6 类经典基准算例全面验证 IELSM 的计算性能：①单轴拉伸（含 4 种随机角度网格旋转验证各向同性）与纯剪切；②简支梁弯曲（与 FEM-Q4、FEM-CST 结构化/非结构化、线性/高阶 DLSM 共 6 方案对比）；③无限大板圆孔应力集中（全场 σ<sub>xx</sub>/σ<sub>yy</sub>/τ<sub>xy</sub> 与解析解对比）；④无限大板中心裂纹与有限板十字形裂纹（与 FEM-Q4 等自由度对比全场位移与应力分布，计算裂尖应力强度因子）。</p>
@@ -461,24 +495,15 @@
                 <p>① <strong>高精度：</strong>单轴拉伸/纯剪切各泊松比（0.01~0.49）下与解析解完全吻合；梁弯曲误差 2.9%，优于 DLSM 和结构化 CST，与 FEM-CST 非结构化网格精度相当。② <strong>严格各向同性：</strong>4 种随机网格旋转角度下横向收缩与总应变能与方向无关，能量偏差 ≤3.3%。③ <strong>高效计算：</strong>梁弯曲求解仅 1.1ms（Q4 的 1/5），半带宽窄（105 DOFs），存储与求解开销低。④ <strong>断裂模拟能力：</strong>裂尖应力场准确捕捉 1/√r 奇异性；中心裂纹与十字形裂纹在较粗网格下 SIF 即稳定收敛，全场位移与 ABAQUS 参考解一致。</p>
               </div>
             </div>
-            <div class="point-right">
-              <div class="point-hero">
-                <img src="images/grad_fig20_beam.png" alt="梁弯曲对比" loading="lazy">
-                <p class="fig-caption">Fig.20：简支梁弯曲 — 6 种数值模型与解析解对比</p>
-              </div>
-              <div class="point-hero" style="margin-top:12px;">
-                <img src="images/grad_fig30a_crack.png" alt="裂尖应力场" loading="lazy">
-                <p class="fig-caption">Fig.30(a)：中心裂纹板裂尖 σ<sub>xx</sub> — IELSM vs Q4 vs 解析解</p>
-              </div>
-            </div>
             <div class="point-thumbs">
-              <div class="thumb-item"><img src="images/grad_fig12b_tension.png" alt="拉伸多ν" loading="lazy"><p class="fig-caption">Fig.12(b)：多ν 位移验证</p></div>
-              <div class="thumb-item"><img src="images/grad_fig15a_isotropy.png" alt="各向同性验证" loading="lazy"><p class="fig-caption">Fig.15(a)：网格旋转各向同性</p></div>
-              <div class="thumb-item"><img src="images/grad/fig17_shear_result.png" alt="纯剪切结果" loading="lazy"><p class="fig-caption">Fig.17：纯剪切验证</p></div>
-              <div class="thumb-item"><img src="images/grad/fig24b1_hole_ielsm.png" alt="圆孔应力IELSM" loading="lazy"><p class="fig-caption">Fig.24(b)：圆孔应力场 IELSM 解</p></div>
-              <div class="thumb-item"><img src="images/grad/fig29b1_crack_ielsm.png" alt="中心裂纹IELSM位移" loading="lazy"><p class="fig-caption">Fig.29(b)：中心裂纹 IELSM 全场位移</p></div>
-              <div class="thumb-item"><img src="images/grad_fig31_crucifix.png" alt="十字裂纹几何" loading="lazy"><p class="fig-caption">Fig.31：十字形裂纹板几何与边界</p></div>
-              <div class="thumb-item"><img src="images/grad_fig36a_crack_tip.png" alt="十字裂尖应力" loading="lazy"><p class="fig-caption">Fig.36(a)：十字裂纹裂尖 σ<sub>yy</sub> 分布</p></div>
+              <div class="thumb-item"><img src="images/grad/fig15c_isotropy_err.png" alt="各向同性误差" loading="lazy"><p class="fig-caption">Fig.15(c)：最不利构型应变能密度相对误差分布（tanθ=0.25, ν=0.49）</p></div>
+              <div class="thumb-item"><img src="images/grad/fig23c_hole_conv.png" alt="网格收敛性" loading="lazy"><p class="fig-caption">Fig.23(c)：不同网格密度下 IELSM 应力收敛性验证</p></div>
+              <div class="thumb-item"><img src="images/grad/fig22_hole_mesh_v2.png" alt="圆孔板网格" loading="lazy"><p class="fig-caption">Fig.22：圆孔板 IELSM 网格布置</p></div>
+              <div class="thumb-item"><img src="images/grad/fig24b1_hole_ielsm.png" alt="圆孔位移场1" loading="lazy"><p class="fig-caption">Fig.24(b)1：圆孔板位移场 — IELSM 线性位移场</p></div>
+              <div class="thumb-item"><img src="images/grad/fig24b2_hole_ielsm.png" alt="圆孔位移场2" loading="lazy"><p class="fig-caption">Fig.24(b)2：圆孔板位移场 — IELSM 双线性位移场</p></div>
+              <div class="thumb-item"><img src="images/grad/fig25d1_hole_strain.png" alt="圆孔应变场1" loading="lazy"><p class="fig-caption">Fig.25(d)1：圆孔板应变场 — IELSM 双线性位移场</p></div>
+              <div class="thumb-item"><img src="images/grad/fig25d2_hole_strain.png" alt="圆孔应变场2" loading="lazy"><p class="fig-caption">Fig.25(d)2：圆孔板应变场 — IELSM 双线性位移场</p></div>
+              <div class="thumb-item"><img src="images/grad/fig25d3_hole_strain.png" alt="圆孔应变场3" loading="lazy"><p class="fig-caption">Fig.25(d)3：圆孔板应变场 — IELSM 双线性位移场</p></div>
             </div>
           </div>
         </div>
