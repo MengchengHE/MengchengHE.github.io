@@ -454,75 +454,31 @@
           <!-- 研究点 3 -->
           <div class="research-point">
             <div class="point-left">
-              <h4>研究点三：基准算例验证 — 弹性边值问题</h4>
-              <p>通过 4 类经典弹性力学算例系统验证 IELSM 精度、收敛性与各向同性：①单轴拉伸（含 4 种随机角度网格旋转）；②纯剪切（平面应变）；③简支梁弯曲（与 FEM-Q4、FEM-CST、DLSM 共 6 方案对比）；④无限大板圆孔应力集中（全场应力与解析解对比、多泊松比位移场验证）。</p>
+              <h4>研究点三：基准算例验证与断裂模拟应用</h4>
+              <p>通过 6 类经典基准算例全面验证 IELSM 的计算性能：①单轴拉伸（含 4 种随机角度网格旋转验证各向同性）与纯剪切；②简支梁弯曲（与 FEM-Q4、FEM-CST 结构化/非结构化、线性/高阶 DLSM 共 6 方案对比）；③无限大板圆孔应力集中（全场 σ<sub>xx</sub>/σ<sub>yy</sub>/τ<sub>xy</sub> 与解析解对比）；④无限大板中心裂纹与有限板十字形裂纹（与 FEM-Q4 等自由度对比全场位移与应力分布，计算裂尖应力强度因子）。</p>
               <div class="point-conclusion">
-                <span class="conc-label">主要结论</span>
-                <p>单轴拉伸/纯剪切各泊松比下与解析解完全吻合。网格旋转横向收缩与方向无关，能量偏差≤3.3%。梁弯曲误差 2.9%，精度优于 DLSM 和结构化 CST，求解仅 1.1ms（Q4 的 1/5）。圆孔全场 σ<sub>xx</sub>/σ<sub>yy</sub>/τ<sub>xy</sub> 与解析解高度一致，ν=0.01~0.49 全覆盖验证。</p>
+                <span class="conc-label">关键代表性优势</span>
+                <p>① <strong>高精度：</strong>单轴拉伸/纯剪切各泊松比（0.01~0.49）下与解析解完全吻合；梁弯曲误差 2.9%，优于 DLSM 和结构化 CST，与 FEM-CST 非结构化网格精度相当。② <strong>严格各向同性：</strong>4 种随机网格旋转角度下横向收缩与总应变能与方向无关，能量偏差 ≤3.3%。③ <strong>高效计算：</strong>梁弯曲求解仅 1.1ms（Q4 的 1/5），半带宽窄（105 DOFs），存储与求解开销低。④ <strong>断裂模拟能力：</strong>裂尖应力场准确捕捉 1/√r 奇异性；中心裂纹与十字形裂纹在较粗网格下 SIF 即稳定收敛，全场位移与 ABAQUS 参考解一致。</p>
               </div>
             </div>
             <div class="point-right">
               <div class="point-hero">
-                <img src="images/grad_fig20_beam.png" alt="梁弯曲" loading="lazy">
-                <p class="fig-caption">Fig.20：简支梁弯曲 — 6 种数值模型与 Euler-Bernoulli 解对比</p>
+                <img src="images/grad_fig20_beam.png" alt="梁弯曲对比" loading="lazy">
+                <p class="fig-caption">Fig.20：简支梁弯曲 — 6 种数值模型与解析解对比</p>
+              </div>
+              <div class="point-hero" style="margin-top:12px;">
+                <img src="images/grad_fig30a_crack.png" alt="裂尖应力场" loading="lazy">
+                <p class="fig-caption">Fig.30(a)：中心裂纹板裂尖 σ<sub>xx</sub> — IELSM vs Q4 vs 解析解</p>
               </div>
             </div>
             <div class="point-thumbs">
-              <div class="thumb-item"><img src="images/grad/fig11_tension_setup.png" alt="拉伸设置" loading="lazy"><p class="fig-caption">Fig.11：拉伸几何</p></div>
-              <div class="thumb-item"><img src="images/grad/fig12a_tension_conv.png" alt="拉伸收敛" loading="lazy"><p class="fig-caption">Fig.12(a)：收敛性</p></div>
-              <div class="thumb-item"><img src="images/grad_fig12b_tension.png" alt="拉伸多ν" loading="lazy"><p class="fig-caption">Fig.12(b)：多ν位移</p></div>
-              <div class="thumb-item"><img src="images/grad/fig13_meshrot.png" alt="网格布置" loading="lazy"><p class="fig-caption">Fig.13：网格布置</p></div>
-              <div class="thumb-item"><img src="images/grad/fig14_rotmesh.png" alt="旋转网格" loading="lazy"><p class="fig-caption">Fig.14：旋转网格</p></div>
-              <div class="thumb-item"><img src="images/grad_fig15a_isotropy.png" alt="各向同性1" loading="lazy"><p class="fig-caption">Fig.15(a)：横向收缩</p></div>
-              <div class="thumb-item"><img src="images/grad/fig15b_isotropy_energy.png" alt="各向同性2" loading="lazy"><p class="fig-caption">Fig.15(b)：应变能</p></div>
-              <div class="thumb-item"><img src="images/grad/fig15c_isotropy_err.png" alt="各向同性3" loading="lazy"><p class="fig-caption">Fig.15(c)：误差分布</p></div>
-              <div class="thumb-item"><img src="images/grad/fig16_shear_setup.png" alt="剪切设置" loading="lazy"><p class="fig-caption">Fig.16：纯剪切几何</p></div>
-              <div class="thumb-item"><img src="images/grad/fig17_shear_result.png" alt="剪切结果" loading="lazy"><p class="fig-caption">Fig.17：剪切结果</p></div>
-              <div class="thumb-item"><img src="images/grad/fig18_beam_setup.png" alt="梁设置" loading="lazy"><p class="fig-caption">Fig.18：梁几何</p></div>
-              <div class="thumb-item"><img src="images/grad/fig19_beam_mesh.png" alt="梁网格" loading="lazy"><p class="fig-caption">Fig.19：梁离散化方案</p></div>
-              <div class="thumb-item"><img src="images/grad/fig21_hole_setup.png" alt="圆孔设置" loading="lazy"><p class="fig-caption">Fig.21：圆孔几何</p></div>
-              <div class="thumb-item"><img src="images/grad/fig22_hole_mesh.png" alt="圆孔网格" loading="lazy"><p class="fig-caption">Fig.22：圆孔网格</p></div>
-              <div class="thumb-item"><img src="images/grad/fig23c_hole_conv.png" alt="圆孔收敛" loading="lazy"><p class="fig-caption">Fig.23(c)：收敛性</p></div>
-              <div class="thumb-item"><img src="images/grad/fig24a1_hole_ana.png" alt="圆孔解析" loading="lazy"><p class="fig-caption">Fig.24(a)：解析解</p></div>
-              <div class="thumb-item"><img src="images/grad/fig24b1_hole_ielsm.png" alt="圆孔IELSM" loading="lazy"><p class="fig-caption">Fig.24(b)：IELSM解</p></div>
-              <div class="thumb-item"><img src="images/grad/fig25a1_hole_v.png" alt="圆孔多ν解析" loading="lazy"><p class="fig-caption">Fig.25(a)：多ν解析</p></div>
-              <div class="thumb-item"><img src="images/grad/fig25c1_hole_v_ielsm.png" alt="圆孔多ν IELSM" loading="lazy"><p class="fig-caption">Fig.25(c)：多ν IELSM</p></div>
-              <div class="thumb-item"><img src="images/grad/fig26a_hole_disp.png" alt="圆孔位移" loading="lazy"><p class="fig-caption">Fig.26(a)：位移对比</p></div>
-              <div class="thumb-item"><img src="images/grad/fig26b_hole_stress.png" alt="圆孔应力" loading="lazy"><p class="fig-caption">Fig.26(b)：应力对比</p></div>
-            </div>
-          </div>
-
-          <!-- 研究点 4 -->
-          <div class="research-point">
-            <div class="point-left">
-              <h4>研究点四：断裂模拟应用 — 裂纹尖端奇异性分析</h4>
-              <p>将 IELSM 拓展至断裂力学：①无限大板中心裂纹——与 FEM-Q4 对比全场位移与应力分布，计算裂尖 K<sub>I</sub>；②有限板十字形裂纹——更复杂裂纹几何，验证位移场、应变场及裂尖应力分布精度。</p>
-              <div class="point-conclusion">
-                <span class="conc-label">主要结论</span>
-                <p>中心裂纹：IELSM 与 Q4 等自由度下全场位移高度吻合，应力场准确捕捉 1/√r 裂尖奇异性。十字形裂纹：复杂几何下保持全场精度，线性/双线性位移场方案裂尖应变均与 ABAQUS 参考解一致。两类裂纹在较粗网格下即可稳定收敛，验证了模型在断裂力学中的有效性与计算效率。</p>
-              </div>
-            </div>
-            <div class="point-right">
-              <div class="point-hero">
-                <img src="images/grad_fig36a_crack_tip.png" alt="裂尖应力" loading="lazy">
-                <p class="fig-caption">Fig.36(a)：十字形裂纹板裂尖 σ<sub>yy</sub> — 沿裂纹延长线分布</p>
-              </div>
-            </div>
-            <div class="point-thumbs">
-              <div class="thumb-item"><img src="images/grad/fig27_crack_setup.png" alt="中心裂纹设置" loading="lazy"><p class="fig-caption">Fig.27：中心裂纹几何</p></div>
-              <div class="thumb-item"><img src="images/grad/fig28_crack_conv.png" alt="中心裂纹收敛" loading="lazy"><p class="fig-caption">Fig.28：收敛性</p></div>
-              <div class="thumb-item"><img src="images/grad/fig29a1_crack_fem.png" alt="FEM位移" loading="lazy"><p class="fig-caption">Fig.29(a)：FEM 位移</p></div>
-              <div class="thumb-item"><img src="images/grad/fig29b1_crack_ielsm.png" alt="IELSM位移" loading="lazy"><p class="fig-caption">Fig.29(b)：IELSM 位移</p></div>
-              <div class="thumb-item"><img src="images/grad_fig30a_crack.png" alt="σxx" loading="lazy"><p class="fig-caption">Fig.30(a)：σ<sub>xx</sub></p></div>
-              <div class="thumb-item"><img src="images/grad/fig30b_crack_sxy.png" alt="τxy" loading="lazy"><p class="fig-caption">Fig.30(b)：τ<sub>xy</sub></p></div>
-              <div class="thumb-item"><img src="images/grad/fig30c_crack_sy.png" alt="σyy" loading="lazy"><p class="fig-caption">Fig.30(c)：σ<sub>yy</sub></p></div>
-              <div class="thumb-item"><img src="images/grad_fig31_crucifix.png" alt="十字裂纹设置" loading="lazy"><p class="fig-caption">Fig.31：十字裂纹几何</p></div>
-              <div class="thumb-item"><img src="images/grad/fig32_cruc_conv.png" alt="十字收敛" loading="lazy"><p class="fig-caption">Fig.32：收敛性</p></div>
-              <div class="thumb-item"><img src="images/grad/fig33_cruc_aH.png" alt="a/H分析" loading="lazy"><p class="fig-caption">Fig.33：a/H 影响</p></div>
-              <div class="thumb-item"><img src="images/grad/fig34_ielsm1_cruc_disp.png" alt="十字位移" loading="lazy"><p class="fig-caption">Fig.34：位移场</p></div>
-              <div class="thumb-item"><img src="images/grad/fig35_ielsm1_cruc_strain.png" alt="十字应变" loading="lazy"><p class="fig-caption">Fig.35：应变场</p></div>
-              <div class="thumb-item"><img src="images/grad/fig36b_cruc_stress.png" alt="应力b" loading="lazy"><p class="fig-caption">Fig.36(b)：裂尖应力</p></div>
-              <div class="thumb-item"><img src="images/grad/fig36c_cruc_stress.png" alt="应力c" loading="lazy"><p class="fig-caption">Fig.36(c)：裂尖应力</p></div>
+              <div class="thumb-item"><img src="images/grad_fig12b_tension.png" alt="拉伸多ν" loading="lazy"><p class="fig-caption">Fig.12(b)：多ν 位移验证</p></div>
+              <div class="thumb-item"><img src="images/grad_fig15a_isotropy.png" alt="各向同性验证" loading="lazy"><p class="fig-caption">Fig.15(a)：网格旋转各向同性</p></div>
+              <div class="thumb-item"><img src="images/grad/fig17_shear_result.png" alt="纯剪切结果" loading="lazy"><p class="fig-caption">Fig.17：纯剪切验证</p></div>
+              <div class="thumb-item"><img src="images/grad/fig24b1_hole_ielsm.png" alt="圆孔应力IELSM" loading="lazy"><p class="fig-caption">Fig.24(b)：圆孔应力场 IELSM 解</p></div>
+              <div class="thumb-item"><img src="images/grad/fig29b1_crack_ielsm.png" alt="中心裂纹IELSM位移" loading="lazy"><p class="fig-caption">Fig.29(b)：中心裂纹 IELSM 全场位移</p></div>
+              <div class="thumb-item"><img src="images/grad_fig31_crucifix.png" alt="十字裂纹几何" loading="lazy"><p class="fig-caption">Fig.31：十字形裂纹板几何与边界</p></div>
+              <div class="thumb-item"><img src="images/grad_fig36a_crack_tip.png" alt="十字裂尖应力" loading="lazy"><p class="fig-caption">Fig.36(a)：十字裂纹裂尖 σ<sub>yy</sub> 分布</p></div>
             </div>
           </div>
         </div>
