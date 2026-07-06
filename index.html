@@ -209,8 +209,9 @@
     }
     .point-thumbs .thumb-item:hover { transform: translateY(-2px); }
     .point-thumbs .thumb-item img {
-      width: 100%; height: auto; border-radius: 2px;
+      width: 100%; height: 160px; object-fit: cover; border-radius: 2px;
     }
+    .point-hero-sm img { max-width: 75%; }
     .point-thumbs .thumb-item .fig-caption {
       font-size: 0.72rem; color: var(--text-muted);
       margin-top: 4px; line-height: 1.4;
@@ -401,7 +402,7 @@
           <!-- 研究点 1：第二章 -->
           <div class="research-point">
             <div class="point-left">
-              <h4>第二章：近场与远场地震动下单层球面网壳结构损伤演化分析</h4>
+              <h4>研究点一：近场与远场地震下网壳结构损伤演化与多指标评估</h4>
               <p>基于 OpenSees 建立三种矢跨比（0.20、0.25、0.30）的 Schwedler 型单层球面网壳纤维单元模型，从 PEER 数据库选取近场脉冲型（30 条）与远场地震动（30 条），采用多条带分析法（MSA）在 7 个地震强度水平（0.2g~2.0g）下进行非线性动力时程分析。引入多指标地震损伤评估模型——综合节点最大位移、平均塑性应变、1P 与 8P 杆件比例四项响应指标，标准离差法客观赋权（ω₁~ω₄），重新界定 DS₁~DS₅ 损伤状态及 LS1~LS4 四个极限状态阈值（0.10/0.35/0.70/0.95）。</p>
               <div class="point-conclusion">
                 <span class="conc-label">主要结论</span>
@@ -419,45 +420,41 @@
               <div class="thumb-item"><img src="images/thesis/fig2-4b_dmax.png" alt="位移-塑性(远场)" loading="lazy"><p class="fig-caption">图2-4(b)：远场 d<sub>max</sub>-塑性比例</p></div>
               <div class="thumb-item"><img src="images/thesis/fig2-5a_1P.png" alt="1P比例(近场)" loading="lazy"><p class="fig-caption">图2-5(a)：近场 1P 杆件比例</p></div>
               <div class="thumb-item"><img src="images/thesis/fig2-5b_1P.png" alt="1P比例(远场)" loading="lazy"><p class="fig-caption">图2-5(b)：远场 1P 杆件比例</p></div>
-              <div class="thumb-item"><img src="images/thesis/fig2-6a_damS1.png" alt="S1近场" loading="lazy"><p class="fig-caption">图2-6(a)：S1 近场损伤</p></div>
-              <div class="thumb-item"><img src="images/thesis/fig2-6b_damS1.png" alt="S1远场" loading="lazy"><p class="fig-caption">图2-6(b)：S1 远场损伤</p></div>
-              <div class="thumb-item"><img src="images/thesis/fig2-7a_damS2.png" alt="S2近场" loading="lazy"><p class="fig-caption">图2-7(a)：S2 近场损伤</p></div>
-              <div class="thumb-item"><img src="images/thesis/fig2-7b_damS2.png" alt="S2远场" loading="lazy"><p class="fig-caption">图2-7(b)：S2 远场损伤</p></div>
-              <div class="thumb-item"><img src="images/thesis/fig2-8a_damS3.png" alt="S3近场" loading="lazy"><p class="fig-caption">图2-8(a)：S3 近场损伤</p></div>
-              <div class="thumb-item"><img src="images/thesis/fig2-8b_damS3.png" alt="S3远场" loading="lazy"><p class="fig-caption">图2-8(b)：S3 远场损伤</p></div>
             </div>
           </div>
 
           <!-- 研究点 2：第三章 -->
           <div class="research-point">
             <div class="point-left">
-              <h4>第三章：单层球面网壳结构易损性分析中地震动强度指标的选择</h4>
-              <p>引入 7 种三向地震动强度表征方式（AMV、GMV、SRSS 等），系统比较 S<sub>a</sub>(T₁) 系列 13 种组合型强度指标在 LS1~LS4 四个极限状态下易损性分析的有效性（β<sub>RTR</sub>）与充分性。分析任意振动周期的 IM-损伤相关性，提出考虑高阶振型影响的改进指标 IM<sub>n</sub>，给出最优组合周期数的确定方法。</p>
+              <h4>研究点二：地震动强度指标的适用性评价与优化选取</h4>
+              <p>引入 AMV、GMV、SRSS 等 7 种三向地震动强度表征方式，系统比较 S<sub>a</sub>(T₁) 及其 13 种改进型组合强度指标在 LS1~LS4 四个损伤极限状态下易损性分析的有效性与充分性。分析任意振动周期的 IM-损伤相关性，评估软化周期与高阶振型对 IM 适用性的影响，提出考虑高阶振型影响的改进指标 IM<sub>n</sub> 并确定最优组合周期数。</p>
               <div class="point-conclusion">
                 <span class="conc-label">主要结论</span>
-                <p>地震损伤极限状态、IM 表征方法与地震类型均对 IM 适用性有显著影响。考虑高阶振型影响的组合型 IM 指标在四个损伤极限状态下保持最低的地震动变异性，且即便使用非最优周期组合也能维持较高适用性。据此建议网壳结构采用 IM<sub>₁₂₃</sub> 进行地震易损性分析。三向地震动强度表征方式的选择会显著影响建模不确定性的估计。</p>
+                <p>地震损伤极限状态、IM 表征方法与地震类型三者均会显著影响 IM 指标的适用性排序。考虑高阶振型影响的组合型 IM 在近场地震的四个损伤极限状态下均保持最低的地震动变异性，且对周期组合不敏感，即使使用非最优组合仍具有较高适用性。据此建议网壳结构采用 IM<sub>₁₂₃</sub> 进行地震易损性分析。</p>
               </div>
             </div>
             <div class="point-right">
-              <div class="point-hero">
-                <img src="images/thesis/fig3-1a_IM.png" alt="IM有效性 LS1" loading="lazy">
-                <p class="fig-caption">图3-1(a)：近场 LS1 下各 IM 指标的有效性对比</p>
+              <div class="point-hero point-hero-sm">
+                <img src="images/thesis/fig3-1a_IM.png" alt="近场LS1各IM有效性" loading="lazy">
+                <p class="fig-caption">图3-1(a)：近场 LS1 下各 IM 指标有效性对比</p>
               </div>
-              <div class="point-hero" style="margin-top:12px;">
-                <img src="images/thesis/fig3-1b_IM.png" alt="IM有效性 LS2" loading="lazy">
-                <p class="fig-caption">图3-1(b)：近场 LS2 下各 IM 指标的有效性对比</p>
+              <div class="point-hero point-hero-sm" style="margin-top:10px;">
+                <img src="images/thesis/fig3-1b_IM.png" alt="近场LS2各IM有效性" loading="lazy">
+                <p class="fig-caption">图3-1(b)：近场 LS2 下各 IM 指标有效性对比</p>
               </div>
             </div>
             <div class="point-thumbs">
-              <div class="thumb-item"><img src="images/thesis/fig3-3a_IMcorr.png" alt="IM相关性" loading="lazy"><p class="fig-caption">图3-3(a)：任意周期 IM-损伤相关性</p></div>
-              <div class="thumb-item"><img src="images/thesis/fig3-7a_IMsummary.png" alt="IM结果汇总" loading="lazy"><p class="fig-caption">图3-7(a)：IM 选取结果汇总</p></div>
+              <div class="thumb-item"><img src="images/thesis/fig3-3a_IMcorr.png" alt="任意周期IM-损伤相关性" loading="lazy"><p class="fig-caption">图3-3(a)：任意振动周期的 IM-损伤相关性分析</p></div>
+              <div class="thumb-item"><img src="images/thesis/fig3-7a_IMsummary.png" alt="IM最优组合项数" loading="lazy"><p class="fig-caption">图3-7(a)：考虑高阶振型的最优组合周期项数确定</p></div>
+              <div class="thumb-item"><img src="images/thesis/fig3-8a_IMopt.png" alt="IM优化结果a" loading="lazy"><p class="fig-caption">图3-8(a)：最优 IM 在 LS1~LS4 下的充分性验证</p></div>
+              <div class="thumb-item"><img src="images/thesis/fig3-8b_IMopt.png" alt="IM优化结果b" loading="lazy"><p class="fig-caption">图3-8(b)：最优 IM 在不同地震类型下的适用性</p></div>
             </div>
           </div>
 
           <!-- 研究点 3：第四章 -->
           <div class="research-point">
             <div class="point-left">
-              <h4>第四章：基于拉丁超立方抽样的建模不确定性量化与倒塌风险分析</h4>
+              <h4>研究点三：基于拉丁超立方抽样的建模不确定性量化与倒塌风险评估</h4>
               <p>以近场脉冲型地震动为例，基于拉丁超立方抽样（LHS）从一个初始模型建立若干随机结构模型样本，对初始模型与每个随机模型施加同组地震动以分离地震动不确定性与建模不确定性。采用一次二阶矩法（FOSM）对阻尼比、钢材屈服强度、结构几何参数等进行灵敏度分析。最后给出考虑建模不确定性的 LS1~LS4 四个极限状态年倒塌概率。</p>
               <div class="point-conclusion">
                 <span class="conc-label">主要结论</span>
