@@ -489,10 +489,10 @@
             </div>
             <div class="point-left">
               <h4>研究点三：基准算例验证与断裂模拟应用</h4>
-              <p>通过 6 类经典基准算例全面验证 IELSM 的计算性能：①单轴拉伸（含 4 种随机角度网格旋转验证各向同性）与纯剪切；②简支梁弯曲（与 FEM-Q4、FEM-CST 结构化/非结构化、线性/高阶 DLSM 共 6 方案对比）；③无限大板圆孔应力集中（全场 σ<sub>xx</sub>/σ<sub>yy</sub>/τ<sub>xy</sub> 与解析解对比）；④无限大板中心裂纹与有限板十字形裂纹（与 FEM-Q4 等自由度对比全场位移与应力分布，计算裂尖应力强度因子）。</p>
+              <p>通过 4 类经典弹性力学基准算例全面验证 IELSM 的计算性能：①单轴拉伸（含 4 种随机角度网格旋转验证各向同性）与纯剪切；②简支梁弯曲（与 FEM-Q4、FEM-CST 结构化/非结构化、线性/高阶 DLSM 共 6 方案对比）；③无限大板圆孔应力集中（全场 σ<sub>xx</sub>/σ<sub>yy</sub>/τ<sub>xy</sub> 与解析解对比、不同泊松比位移场验证）。</p>
               <div class="point-conclusion">
                 <span class="conc-label">关键代表性优势</span>
-                <p>① <strong>高精度：</strong>单轴拉伸/纯剪切各泊松比（0.01~0.49）下与解析解完全吻合；梁弯曲误差 2.9%，优于 DLSM 和结构化 CST，与 FEM-CST 非结构化网格精度相当。② <strong>严格各向同性：</strong>4 种随机网格旋转角度下横向收缩与总应变能与方向无关，能量偏差 ≤3.3%。③ <strong>高效计算：</strong>梁弯曲求解仅 1.1ms（Q4 的 1/5），半带宽窄（105 DOFs），存储与求解开销低。④ <strong>断裂模拟能力：</strong>裂尖应力场准确捕捉 1/√r 奇异性；中心裂纹与十字形裂纹在较粗网格下 SIF 即稳定收敛，全场位移与 ABAQUS 参考解一致。</p>
+                <p>① <strong>高精度：</strong>单轴拉伸/纯剪切各泊松比（0.01~0.49）下与解析解完全吻合；梁弯曲误差 2.9%，优于 DLSM 和结构化 CST，与 FEM-CST 非结构化网格精度相当。② <strong>严格各向同性：</strong>4 种随机网格旋转角度下横向收缩与总应变能与方向无关，能量偏差 ≤3.3%。③ <strong>高效计算：</strong>梁弯曲求解仅 1.1ms（Q4 的 1/5），半带宽窄（105 DOFs），存储与求解开销低。</p>
               </div>
             </div>
             <div class="point-thumbs">
@@ -504,6 +504,21 @@
               <div class="thumb-item"><img src="images/grad/fig25d1_hole_strain.png" alt="圆孔应变场1" loading="lazy"><p class="fig-caption">Fig.25(d)1：圆孔板应变场 — IELSM 双线性位移场</p></div>
               <div class="thumb-item"><img src="images/grad/fig25d2_hole_strain.png" alt="圆孔应变场2" loading="lazy"><p class="fig-caption">Fig.25(d)2：圆孔板应变场 — IELSM 双线性位移场</p></div>
               <div class="thumb-item"><img src="images/grad/fig25d3_hole_strain.png" alt="圆孔应变场3" loading="lazy"><p class="fig-caption">Fig.25(d)3：圆孔板应变场 — IELSM 双线性位移场</p></div>
+            </div>
+          </div>
+
+          <!-- 研究点 4 -->
+          <div class="research-point research-point-stack">
+            <div class="point-left">
+              <h4>研究点四：各向同性损伤与断裂模拟</h4>
+              <p>在 IELSM 弹性框架基础上引入各向同性损伤模型，拓展至准脆性材料的断裂模拟。分别采用四种各向同性损伤准则进行对比研究：(i) 标准 Rankine 准则（最大主应力）；(ii) 截断 Rankine 准则（引入受压截断以区分拉压破坏）；(iii) Drucker-Prager 准则（考虑静水压力影响的压剪耦合）；(iv) Ottosen 准则（四参数混凝土强度模型，匹配拉压子午线）。首先通过与标准 FEM 对比验证 IELSM 损伤算法嵌入的正确性，随后通过 L 形板与三点弯曲梁等基准算例校准损伤参数，评估不同准则对裂纹路径与峰值荷载的预测精度。</p>
+              <div class="point-conclusion">
+                <span class="conc-label">进展与方向</span>
+                <p>IELSM 损伤框架已通过 FEM 对比验证了算法正确性。四种准则覆盖了从简单 Rankine 到复杂 Ottosen 的完整复杂度谱系：Rankine 类准则计算高效但未考虑压剪耦合；Drucker-Prager 引入静水压效应；Ottosen 四参数模型提供最完整的混凝土类材料强度描述。L 形板与三点弯曲算例初步结果表明模型能合理捕捉裂纹萌生与扩展路径，后续将系统比较四种准则的预测差异并拓展至三维问题。</p>
+              </div>
+            </div>
+            <div class="point-thumbs">
+              <p style="font-size:0.88rem;color:var(--text-muted);font-style:italic;">（数值验证图片待补充：L 形板裂纹路径、三点弯曲荷载-位移曲线、四种准则对比）</p>
             </div>
           </div>
         </div>
