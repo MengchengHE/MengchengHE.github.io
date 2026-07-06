@@ -217,6 +217,38 @@
       border-radius: 4px; margin-bottom: 4px;
     }
 
+    /* === Honors === */
+    .honors-group { margin-bottom: 24px; }
+    .honors-year {
+      font-family: var(--font-heading);
+      font-size: 1.1rem; color: var(--accent); margin-bottom: 8px;
+    }
+    .honors-list { list-style: none; padding: 0; }
+    .honors-list li {
+      padding: 8px 0 8px 20px; position: relative;
+      font-size: 0.93rem; color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    .honors-list li:last-child { border-bottom: none; }
+    .honors-list li::before {
+      content: ''; position: absolute; left: 0; top: 12px;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* === Skills === */
+    .skills-container { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skill-tag {
+      display: inline-block; padding: 8px 20px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; font-size: 0.9rem; color: var(--primary);
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .skill-tag:hover {
+      background: #eff6ff; border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
     /* === Scroll Animations === */
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -239,6 +271,8 @@
         <li><a href="#education">教育经历</a></li>
         <li><a href="#research">研究方向</a></li>
         <li><a href="#publications">科研成果</a></li>
+        <li><a href="#honors">荣誉奖项</a></li>
+        <li><a href="#skills">技能</a></li>
       </ul>
     </div>
   </nav>
@@ -341,6 +375,50 @@
               <p class="pub-journal">专利号：CN202222132375.6 · 2023-03-24</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <!-- Honors -->
+    <section id="honors">
+      <div class="container">
+        <h2 class="section-title">荣誉奖项</h2>
+        <div class="honors-group">
+          <h3 class="honors-year">2024</h3>
+          <ul class="honors-list">
+            <li>—— 荣誉/奖项名称 ——</li>
+          </ul>
+        </div>
+        <div class="honors-group">
+          <h3 class="honors-year">2023</h3>
+          <ul class="honors-list">
+            <li>—— 荣誉/奖项名称 ——</li>
+          </ul>
+        </div>
+        <div class="honors-group">
+          <h3 class="honors-year">2022</h3>
+          <ul class="honors-list">
+            <li>—— 荣誉/奖项名称 ——</li>
+          </ul>
+        </div>
+        <div class="honors-group">
+          <h3 class="honors-year">2021</h3>
+          <ul class="honors-list">
+            <li>—— 荣誉/奖项名称 ——</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">技能</h2>
+        <div class="skills-container">
+          <span class="skill-tag">MATLAB</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">OpenSees</span>
+          <span class="skill-tag">Tcl</span>
+          <span class="skill-tag">有限元分析</span>
+          <span class="skill-tag">数值模拟</span>
         </div>
       </div>
     </section>
