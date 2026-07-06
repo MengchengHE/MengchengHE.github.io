@@ -129,25 +129,40 @@
     }
 
     /* === Research Interests === */
-    .research-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
-    }
-    .research-card {
-      background: var(--surface); border-radius: var(--radius);
-      padding: 28px; box-shadow: var(--shadow-sm);
-      border-left: 4px solid var(--accent);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .research-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-    .research-card h3 {
+    .research-stage { margin-bottom: 56px; }
+    .research-stage:last-child { margin-bottom: 0; }
+    .research-stage-title {
       font-family: var(--font-heading);
-      font-size: 1.15rem; color: var(--primary); margin-bottom: 8px;
+      font-size: 1.2rem; color: var(--primary);
+      margin-bottom: 24px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
     }
-    .research-card p {
-      font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;
+    .research-block {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 28px; margin-bottom: 32px;
+      align-items: start;
+    }
+    .research-text h4 {
+      font-family: var(--font-heading);
+      font-size: 1.08rem; color: var(--primary); margin-bottom: 10px;
+    }
+    .research-text p {
+      font-size: 0.92rem; color: var(--text-muted); line-height: 1.75;
+    }
+    .research-figure {
+      background: var(--surface); border-radius: var(--radius);
+      padding: 12px; box-shadow: var(--shadow-sm);
+      text-align: center;
+    }
+    .research-figure img {
+      width: 100%; height: auto; border-radius: 4px;
+    }
+    .research-figure .fig-caption {
+      font-size: 0.82rem; color: var(--text-muted);
+      margin-top: 8px; font-style: italic;
     }
     @media (max-width: 768px) {
-      .research-grid { grid-template-columns: 1fr; }
+      .research-block { grid-template-columns: 1fr; }
     }
 
     /* === Education Timeline === */
@@ -319,27 +334,57 @@
       <div class="container">
         <h2 class="section-title">研究方向</h2>
 
-        <h3 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 18px; margin-top: 8px; font-size: 1.15rem;">本科阶段 — 地震易损性分析</h3>
-        <div class="research-grid" style="margin-bottom: 36px;">
-          <div class="research-card fade-in">
-            <h3>单层球面网壳结构抗震性能与损伤评估</h3>
-            <p>以施威德勒型单层球面网壳为研究对象，对比分析近场脉冲型与远场地震动下不同矢跨比结构的损伤演化规律；引入多指标地震损伤评估模型，综合考虑节点位移、塑性发展、残余变形等响应指标，系统评估网壳结构在各损伤极限状态下的抗震能力。</p>
+        <!-- 本科阶段 -->
+        <div class="research-stage fade-in">
+          <h3 class="research-stage-title">本科阶段 — 地震易损性分析（指导教师：张延泰 副教授）</h3>
+
+          <div class="research-block">
+            <div class="research-text">
+              <h4>单层球面网壳结构抗震性能与损伤评估</h4>
+              <p>以施威德勒型单层球面网壳为研究对象，建立 OpenSees 有限元模型。选取近场脉冲型与远场地震动各 30 条，对比分析 0.20、0.25、0.30 三种矢跨比结构在 7 个地震强度水平下的损伤演化规律。引入多指标地震损伤评估模型，基于标准离差法确定节点位移、塑性发展、残余变形等四项指标的权重系数，系统评估结构在 LS1~LS4 四个极限状态下的抗震能力。结果表明：矢跨比越大，结构在较严重损伤状态下抗震能力越强；同矢跨比下，远场地震造成的破坏大于近场脉冲型地震。</p>
+            </div>
+            <div class="research-figure">
+              <img src="images/thesis_model.png" alt="单层球面网壳结构模型" loading="lazy">
+              <p class="fig-caption">图：不同矢跨比施威德勒型单层球面网壳结构模型</p>
+            </div>
           </div>
-          <div class="research-card fade-in">
-            <h3>地震动强度指标选取与建模不确定性量化</h3>
-            <p>研究 S<sub>a</sub>(T₁) 系列组合型三向地震动强度指标在网壳各损伤极限状态下的适用性，提出考虑高阶振型影响的改进指标；基于拉丁超立方抽样（LHS）与一次二阶矩法（FOSM）量化建模不确定性，完成考虑不确定性的倒塌风险分析。</p>
+
+          <div class="research-block">
+            <div class="research-text">
+              <h4>地震动强度指标选取与建模不确定性量化</h4>
+              <p>引入 7 种三向地震动强度表征方式，系统比较 S<sub>a</sub>(T₁) 系列组合型强度指标在各损伤极限状态下易损性分析的适用性，提出考虑高阶振型影响的改进指标 IM<sub>n</sub>。基于拉丁超立方抽样（LHS）生成随机结构模型，结合一次二阶矩法（FOSM）对阻尼比、钢材屈服强度等参数进行灵敏度分析，量化建模不确定性占总不确定性的比例，最终给出考虑建模不确定性的倒塌风险年发生概率。</p>
+            </div>
+            <div class="research-figure">
+              <img src="images/thesis_fragility.png" alt="网壳损伤分布与易损性分析" loading="lazy">
+              <p class="fig-caption">图：近场与远场地震作用下网壳结构损伤指数分布与易损性曲线</p>
+            </div>
           </div>
         </div>
 
-        <h3 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 18px; margin-top: 8px; font-size: 1.15rem;">研究生阶段 — 计算力学领域新方法</h3>
-        <div class="research-grid">
-          <div class="research-card fade-in">
-            <h3>各向同性弹性晶格弹簧模型（IELSM）</h3>
-            <p>提出附加体积约束的各向同性弹性晶格弹簧模型，突破经典晶格弹簧模型泊松比固定的理论局限。通过修正总应变能引入附加体积模量参数，建立离散弹簧参数与宏观弹性常数的精确解析映射，实现平面应力 -1 &lt; v &lt; 1 与平面应变 -1 &lt; v &lt; 0.5 全范围可调泊松比。</p>
+        <!-- 研究生阶段 -->
+        <div class="research-stage fade-in">
+          <h3 class="research-stage-title">研究生阶段 — 计算力学领域新方法（指导教师：李冬明 副教授）</h3>
+
+          <div class="research-block">
+            <div class="research-text">
+              <h4>各向同性弹性晶格弹簧模型（IELSM）</h4>
+              <p>提出附加体积约束的各向同性弹性晶格弹簧模型（IELSM），突破经典晶格弹簧模型（LSM）泊松比固定的理论瓶颈。IELSM 在 LSM 应变能基础上引入附加体积模量参数 k<sup>(v)</sup>，通过修正体积变形能力建立离散弹簧参数与宏观弹性常数（E, v）的精确解析映射。当 k<sup>(v)</sup> > 0 时增强体积刚度使 v 趋近不可压缩极限，k<sup>(v)</sup> < 0 时则实现负泊松比。该模型覆盖平面应力 -1 &lt; v &lt; 1 与平面应变 -1 &lt; v &lt; 0.5 的物理容许全范围，且严格满足旋转不变性。</p>
+            </div>
+            <div class="research-figure">
+              <img src="images/ielsm_rve.png" alt="IELSM 模型示意图" loading="lazy">
+              <p class="fig-caption">图：IELSM 代表性体积单元（RVE）及其物理分解示意</p>
+            </div>
           </div>
-          <div class="research-card fade-in">
-            <h3>数值离散化与断裂模拟应用</h3>
-            <p>将附加体积约束等效分解为标准力学组件（轴向弹簧、剪切弹簧、转动弹簧），实现与有限元框架的无缝衔接；通过单轴拉伸、纯剪切、梁弯曲、圆孔应力集中及裂纹尖端应力奇异性等基准算例验证模型精度与网格收敛性，拓展至断裂模拟。</p>
+
+          <div class="research-block">
+            <div class="research-text">
+              <h4>数值离散化与断裂模拟应用</h4>
+              <p>将附加体积约束的刚度矩阵精确等效分解为轴向弹簧、剪切弹簧与转动弹簧三种标准力学组件的组合，实现与标准有限元框架的无缝嵌入。特征值分析表明，IELSM 在泊松比全范围内刚度矩阵保持正定，有效抑制了常应变三角形单元的寄生剪切锁死和双线性四边形单元的沙漏零能模式。通过单轴拉伸（含网格旋转各向同性验证）、纯剪切、梁弯曲、圆孔应力集中、中心裂纹及十字形裂纹尖端应力奇异性等基准算例系统验证模型的精度、网格收敛性与计算效率。</p>
+            </div>
+            <div class="research-figure">
+              <img src="images/ielsm_assembly.png" alt="IELSM 数值装配与验证" loading="lazy">
+              <p class="fig-caption">图：IELSM 刚度矩阵装配方案及三类离散方案总势能对比（E=1）</p>
+            </div>
           </div>
         </div>
       </div>
