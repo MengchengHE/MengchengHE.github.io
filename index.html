@@ -103,12 +103,9 @@
       max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
     }
     .hero-photo {
-      width: 160px; height: 160px; border-radius: 50%;
-      background: rgba(255,255,255,0.15); border: 3px solid rgba(255,255,255,0.3);
+      width: 160px; height: auto;
       flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem; color: rgba(255,255,255,0.6);
-      text-align: center; line-height: 1.4;
+      border-radius: 4px;
     }
     .hero-text h1 {
       font-family: var(--font-heading);
@@ -127,7 +124,7 @@
     }
     @media (max-width: 768px) {
       .hero-inner { flex-direction: column; text-align: center; gap: 24px; }
-      .hero-photo { width: 120px; height: 120px; }
+      .hero-photo { width: 120px; }
       .hero-text h1 { font-size: 1.8rem; }
     }
 
@@ -306,7 +303,7 @@
     <!-- Hero -->
     <section id="hero">
       <div class="hero-inner">
-        <div class="hero-photo">照片<br>Photo</div>
+        <img class="hero-photo" src="picture.png" alt="何梦诚">
         <div class="hero-text">
           <h1>何梦诚</h1>
           <p class="hero-name-en">Mengcheng He</p>
