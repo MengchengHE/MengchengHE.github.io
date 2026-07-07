@@ -509,6 +509,16 @@
 
           <!-- 研究点 4 -->
           <div class="research-point research-point-stack">
+            <div class="point-hero-row">
+              <div class="point-hero-item">
+                <img src="L形板.png" alt="L形板裂纹路径" loading="lazy">
+                <p class="fig-caption">L 形板裂纹扩展路径</p>
+              </div>
+              <div class="point-hero-item">
+                <img src="梁三点弯曲.png" alt="三点弯曲梁损伤云图" loading="lazy">
+                <p class="fig-caption">三点弯曲梁损伤云图</p>
+              </div>
+            </div>
             <div class="point-left">
               <h4>研究点四：各向同性损伤与断裂模拟</h4>
               <p>在 IELSM 弹性框架基础上引入各向同性损伤模型，拓展至准脆性材料的断裂模拟。分别采用四种各向同性损伤准则进行对比研究：(i) 标准 Rankine 准则（最大主应力）；(ii) 截断 Rankine 准则（引入受压截断以区分拉压破坏）；(iii) Drucker-Prager 准则（考虑静水压力影响的压剪耦合）；(iv) Ottosen 准则（四参数混凝土强度模型，匹配拉压子午线）。首先通过与标准 FEM 对比验证 IELSM 损伤算法嵌入的正确性，随后通过 L 形板与三点弯曲梁等基准算例校准损伤参数，评估不同准则对裂纹路径与峰值荷载的预测精度。</p>
@@ -516,10 +526,6 @@
                 <span class="conc-label">进展与方向</span>
                 <p>IELSM 损伤框架已通过 FEM 对比验证了算法正确性。四种准则覆盖了从简单 Rankine 到复杂 Ottosen 的完整复杂度谱系：Rankine 类准则计算高效但未考虑压剪耦合；Drucker-Prager 引入静水压效应；Ottosen 四参数模型提供最完整的混凝土类材料强度描述。L 形板与三点弯曲算例初步结果表明模型能合理捕捉裂纹萌生与扩展路径，后续将系统比较四种准则的预测差异并拓展至三维问题。</p>
               </div>
-            </div>
-            <div class="point-thumbs">
-              <div class="thumb-item"><img src="L形板.png" alt="L形板裂纹路径" loading="lazy"><p class="fig-caption">L 形板裂纹扩展路径</p></div>
-              <div class="thumb-item"><img src="梁三点弯曲.png" alt="三点弯曲梁损伤云图" loading="lazy"><p class="fig-caption">三点弯曲梁损伤云图</p></div>
             </div>
           </div>
         </div>
