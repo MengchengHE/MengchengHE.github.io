@@ -372,6 +372,8 @@
         <li><a href="#hero">首页</a></li>
         <li><a href="#education">教育经历</a></li>
         <li><a href="#research">研究方向</a></li>
+        <li><a href="#experiment">实验经历</a></li>
+        <li><a href="#unpublished">未发表的成果</a></li>
         <li><a href="#publications">科研成果</a></li>
         <li><a href="#honors">荣誉奖项</a></li>
       </ul>
@@ -506,27 +508,6 @@
             </div>
           </div>
 
-          <!-- 研究点 4 -->
-          <div class="research-point research-point-stack">
-            <div class="point-hero-row">
-              <div class="point-hero-item">
-                <img src="L形板.png" alt="L形板裂纹路径" loading="lazy">
-                <p class="fig-caption">L 形板裂纹扩展路径</p>
-              </div>
-              <div class="point-hero-item">
-                <img src="梁三点弯曲.png" alt="三点弯曲梁损伤云图" loading="lazy">
-                <p class="fig-caption">三点弯曲梁损伤云图</p>
-              </div>
-            </div>
-            <div class="point-left">
-              <h4>研究点四：各向同性损伤与断裂模拟</h4>
-              <p>在 IELSM 弹性框架基础上引入各向同性损伤模型，拓展至准脆性材料的断裂模拟。分别采用四种各向同性损伤准则进行对比研究：(i) 标准 Rankine 准则（最大主应力）；(ii) 截断 Rankine 准则（引入受压截断以区分拉压破坏）；(iii) Drucker-Prager 准则（考虑静水压力影响的压剪耦合）；(iv) Ottosen 准则（四参数混凝土强度模型，匹配拉压子午线）。首先通过与标准 FEM 对比验证 IELSM 损伤算法嵌入的正确性，随后通过 L 形板与三点弯曲梁等基准算例校准损伤参数，评估不同准则对裂纹路径与峰值荷载的预测精度。</p>
-              <div class="point-conclusion">
-                <span class="conc-label">进展与方向</span>
-                <p>IELSM 损伤框架已通过 FEM 对比验证了算法正确性。四种准则覆盖了从简单 Rankine 到复杂 Ottosen 的完整复杂度谱系：Rankine 类准则计算高效但未考虑压剪耦合；Drucker-Prager 引入静水压效应；Ottosen 四参数模型提供最完整的混凝土类材料强度描述。L 形板与三点弯曲算例初步结果表明模型能合理捕捉裂纹萌生与扩展路径，后续将系统比较四种准则的预测差异并拓展至三维问题。</p>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- ===== 本科阶段 ===== -->
@@ -623,6 +604,172 @@
       </div>
     </section>
 
+    <!-- Experiment -->
+    <section id="experiment">
+      <div class="container">
+        <h2 class="section-title">实验经历</h2>
+
+        <div class="research-overview fade-in">
+          <p>在研究生学习期间，参与了<strong>拓扑凝胶（Topological Gel）</strong>的实验制备研究，基于聚轮烷（Polyrotaxane）化学交联路线，完成了从原料准备、聚轮烷合成到拓扑凝胶交联、力学性能测试的全流程实验。拓扑凝胶以环糊精与聚乙二醇形成的聚轮烷为骨架，通过化学交联将机械互锁的环状分子固定，是一类具有独特力学性能的<strong>高分子软材料</strong>。该实验涉及无水条件下的化学交联反应、透析纯化、冷冻干燥及核磁共振氢谱（<sup>1</sup>H NMR）表征等化学与高分子材料实验技术，为在<strong>软材料与高分子材料</strong>方向的交叉研究积累了实验基础。</p>
+        </div>
+
+        <div class="research-keywords fade-in">
+          <span class="skill-tag">聚轮烷合成</span><span class="skill-tag">化学交联</span><span class="skill-tag">透析纯化</span><span class="skill-tag">冷冻干燥</span><span class="skill-tag"><sup>1</sup>H NMR 表征</span><span class="skill-tag">无水操作</span><span class="skill-tag">TGase 酶催化</span><span class="skill-tag">CDI 交联</span>
+        </div>
+
+        <!-- Stage 1: 聚轮烷合成 -->
+        <div class="research-point research-point-stack fade-in">
+          <div class="point-hero-row" style="grid-template-columns: 1fr 1fr 1fr;">
+            <div class="point-hero-item">
+              <img src="实验/图1溶液状态a.png" alt="溶液-乳浊液状态" loading="lazy">
+              <p class="fig-caption">图1(a)：刚混合时呈乳浊液状态</p>
+            </div>
+            <div class="point-hero-item">
+              <img src="实验/图1溶液状态b.png" alt="溶液-中间状态" loading="lazy">
+              <p class="fig-caption">图1(b)：静置后逐渐变澄清的中间状态</p>
+            </div>
+            <div class="point-hero-item">
+              <img src="实验/图1溶液状态c.png" alt="溶液-澄清状态" loading="lazy">
+              <p class="fig-caption">图1(c)：4°C 静置 36h 后完全澄清</p>
+            </div>
+          </div>
+          <div class="point-left">
+            <h4>阶段一：聚轮烷（Polyrotaxane）的合成与表征</h4>
+            <p>将 HP-α-CD（羟丙基改性度 37.7%）与 NH₂-PEG-NH₂（M<sub>w</sub> = 40000）在 PBS 缓冲液（0.1 mol/L，pH 8.0）中混合溶解，4°C 静置 36 小时形成准聚轮烷；以 Z-Gln-Gly 为封端剂、TGase 催化酰胺基转移反应进行封端，室温磁力搅拌 3 天；透析（MWCO 12000–14000）3 天除去游离环糊精与未反应封端剂；冷冻干燥得粗产物后，THF 离心洗涤除去游离 PEG；60°C 热处理验证产物热稳定性（聚轮烷保持固态而 PEG/准聚轮烷熔化），二次透析纯化；0.45 μm 膜过滤除 TGase 酶，冻干获得最终聚轮烷产物。取少量产物溶于 d<sub>6</sub>-DMSO 进行 <sup>1</sup>H NMR 测试，通过 H-1 与 H-2~H-6/PEG 质子积分比计算环糊精覆盖率，同时推算聚轮烷分子量。整个合成周期约 7–10 天。</p>
+            <div class="point-conclusion">
+              <span class="conc-label">关键实验技术</span>
+              <p>TGase 酶催化封端 · 透析纯化（MWCO 选择） · THF 离心洗涤 · 热稳定性验证 · <sup>1</sup>H NMR 覆盖率计算 · 0.45 μm 膜过滤除酶</p>
+            </div>
+          </div>
+          <div class="point-thumbs">
+            <div class="thumb-item"><img src="实验/图3透析.png" alt="透析纯化" loading="lazy"><p class="fig-caption">图3：透析纯化（MWCO 12000–14000）除去游离环糊精与未反应封端剂</p></div>
+            <div class="thumb-item"><img src="实验/图2磁力搅拌.jpg" alt="磁力搅拌封端" loading="lazy"><p class="fig-caption">图2：加入 Z-Gln-Gly 与 TGase 后磁力搅拌封端（3 天）</p></div>
+            <div class="thumb-item"><img src="实验/图4粗产物.png" alt="粗产物" loading="lazy"><p class="fig-caption">图4：透析后冷冻干燥得到的粗产物 PR</p></div>
+            <div class="thumb-item"><img src="实验/图5离心.jpg" alt="THF离心洗涤" loading="lazy"><p class="fig-caption">图5：THF 离心洗涤除去游离 PEG</p></div>
+            <div class="thumb-item"><img src="实验/图6左为沉淀，右为上清液产物.png" alt="沉淀与上清液产物对比" loading="lazy"><p class="fig-caption">图6：60°C 热稳定性验证——左为沉淀（聚轮烷，完好），右为上清液产物（玻璃态）</p></div>
+            <div class="thumb-item"><img src="实验/图7注射过滤.jpg" alt="注射过滤" loading="lazy"><p class="fig-caption">图7：0.45 μm 膜过滤器注射过滤除 TGase</p></div>
+            <div class="thumb-item"><img src="实验/图8聚轮烷核磁氢谱.png" alt="聚轮烷核磁氢谱" loading="lazy"><p class="fig-caption">图8：聚轮烷 <sup>1</sup>H NMR 谱图（d<sub>6</sub>-DMSO）——H-1 峰（~4.8 ppm）与 H-2~H-6/PEG 峰（3.0–4.0 ppm）用于覆盖率计算</p></div>
+          </div>
+        </div>
+
+        <!-- Stage 2: 拓扑凝胶交联 -->
+        <div class="research-point research-point-stack fade-in">
+          <div class="point-hero-row">
+            <div class="point-hero-item">
+              <img src="实验/图9超声导致水雾.png" alt="超声导致水雾" loading="lazy">
+              <p class="fig-caption">图9：超声时间过长导致管壁出现水雾——水分的进入会引发 CDI 分解失效</p>
+            </div>
+            <div class="point-hero-item">
+              <img src="实验/图10拓扑凝胶成品试样.png" alt="拓扑凝胶成品" loading="lazy">
+              <p class="fig-caption">图10：交联完成后的拓扑凝胶——呈透明状</p>
+            </div>
+          </div>
+          <div class="point-left">
+            <h4>阶段二：拓扑凝胶的化学交联制备</h4>
+            <p><strong>准备工作：</strong>3A 分子筛 120°C 烘干 24 小时后置于 DMSO 中除水（超干溶剂仍可能含水，须二次除水）；聚轮烷 60°C 真空干燥 12 小时；聚四氟乙烯模具烘干备用。<strong>交联操作：</strong>将干燥 PR 溶于无水 DMSO 并充分搅拌溶解（不宜长时间超声——发热引起管壁水雾凝结，水导致 CDI 分解，如图 9）；加入 CDI（N,N′-羰基二咪唑）交联剂——CDI 遇水即分解并产生气泡，可作为体系含水量的快速指示，全过程须严格无水操作；抽真空除去气泡（容器须置冰水浴中降温，防止真空干燥箱余温提前引发交联）；将预凝胶溶液注入模具并加盖（防止溶剂高温蒸发），60°C 过夜交联成胶。所得拓扑凝胶呈透明状（图 10），成胶后应立即测试，不测试时保存于液体石蜡油中以防 DMSO 蒸发影响力学性能。</p>
+            <div class="point-conclusion">
+              <span class="conc-label">关键注意事项</span>
+              <p>CDI 交联剂遇水即刻分解——全过程须严格无水条件（包括溶剂、PR、模具、操作环境） · 真空除泡须在低温下进行 · 成胶后石蜡油封存防止溶剂蒸发 · 四氢呋喃（THF）有毒须在通风橱操作 · 二乙烯基砜（DVS，水溶剂体系交联剂）为剧毒品，购买需审批</p>
+            </div>
+            <!-- 力学性能测试 -->
+            <div class="point-hero-stack" style="margin-top: 24px;">
+              <video src="实验/单轴拉伸试验.mp4" controls preload="metadata" style="max-width: 100%; border-radius: 4px; display: block; margin: 0 auto;">
+                您的浏览器不支持视频播放。
+              </video>
+              <p class="fig-caption" style="text-align: center;">拓扑凝胶单轴拉伸力学性能测试</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unpublished Results -->
+    <section id="unpublished">
+      <div class="container">
+        <h2 class="section-title">未发表的成果</h2>
+
+        <!-- 研究点一 -->
+        <div class="card fade-in" style="margin-bottom: 28px;">
+          <h3 class="research-stage-title" style="margin-top: 0;">各向同性损伤与断裂模拟</h3>
+          <p style="margin-bottom: 16px;">在 IELSM 弹性框架基础上引入各向同性损伤模型，拓展至准脆性材料的断裂模拟。分别采用四种各向同性损伤准则进行对比研究：(i) 标准 Rankine 准则（最大主应力）；(ii) 截断 Rankine 准则（引入受压截断以区分拉压破坏）；(iii) Drucker-Prager 准则（考虑静水压力影响的压剪耦合）；(iv) Ottosen 准则（四参数混凝土强度模型，匹配拉压子午线）。首先通过与标准 FEM 对比验证 IELSM 损伤算法嵌入的正确性，随后通过 L 形板与三点弯曲梁等基准算例校准损伤参数，评估不同准则对裂纹路径与峰值荷载的预测精度。</p>
+          <div class="point-hero-row">
+            <div class="point-hero-item">
+              <img src="L形板.png" alt="L形板裂纹路径" loading="lazy">
+              <p class="fig-caption">L 形板裂纹扩展路径</p>
+            </div>
+            <div class="point-hero-item">
+              <img src="梁三点弯曲.png" alt="三点弯曲梁损伤云图" loading="lazy">
+              <p class="fig-caption">三点弯曲梁损伤云图</p>
+            </div>
+          </div>
+          <div class="point-conclusion" style="margin-top: 16px;">
+            <span class="conc-label">进展与方向</span>
+            <p>IELSM 损伤框架已通过 FEM 对比验证了算法正确性。四种准则覆盖了从简单 Rankine 到复杂 Ottosen 的完整复杂度谱系，L 形板与三点弯曲算例初步结果表明模型能合理捕捉裂纹萌生与扩展路径，后续将系统比较四种准则的预测差异并拓展至三维问题。</p>
+          </div>
+        </div>
+
+        <!-- 研究点二 -->
+        <div class="card fade-in" style="margin-bottom: 28px;">
+          <h3 class="research-stage-title" style="margin-top: 0;">基于 PSO 的高分子网络网格生成与机器学习参数映射</h3>
+          <p style="margin-bottom: 16px;">独立开发了一套适用于<strong>凝胶等高分子材料</strong>的网格生成程序，用于 QC（Quasi-Continuum）方法的数值模拟。程序基于<strong>粒子群算法（PSO）</strong>优化节点排布，考虑分子链长度的随机性，可预设键长的目标分布类型（泊松分布、正态分布、均匀分布）并调节分布的峰值位置与峰数。与全原子模型相比，该粗粒化（CG）网格生成方法在保留分子链随机性特征的同时大幅降低计算规模。针对程序输入参数与实际输出参数之间的偏差，采用<strong>拉丁超立方抽样（LHS）</strong>生成 1000 组样本（5 输入 → 13 输出），使用<strong>随机森林</strong>进行相关性分析——发现分布类型主导迭代行为（RF 按三种分布分为三簇），键角分布与预设配位数显著相关，线性回归可在一定精度内由输入参数预测实际配位数。</p>
+          <div class="point-hero-stack">
+            <img src="未发表的成果/图片1我自己设计的适用于凝胶等高分子材料考虑分子链长度随机性的网格生成程序.png" alt="网格生成程序" loading="lazy">
+            <p class="fig-caption">图1：自研网格生成程序界面——适用于凝胶等高分子材料，考虑分子链长度随机性</p>
+          </div>
+          <div class="point-hero-row" style="margin-top: 16px;">
+            <div class="point-hero-item">
+              <img src="未发表的成果/图片2该程序可以预设分子链长度的分布（包括泊松分布、正态分布、均匀分布；还能调节分布的峰值与峰的数量）.png" alt="分子链长度分布预设" loading="lazy">
+              <p class="fig-caption">图2：可预设键长分布类型（泊松/正态/均匀），调节峰值位置与峰数</p>
+            </div>
+            <div class="point-hero-item">
+              <img src="未发表的成果/图片3展示了网格实际配位数与期望配位数间有偏差，希望通过调整输入参数，得到实际想要的配位数.png" alt="配位数偏差" loading="lazy">
+              <p class="fig-caption">图3：网格实际配位数与期望配位数存在偏差，需调整输入参数以匹配目标</p>
+            </div>
+          </div>
+          <div class="point-hero-row" style="margin-top: 12px;">
+            <div class="point-hero-item">
+              <img src="未发表的成果/图片4为机器学习使用拉丁超立方抽样准备数据.png" alt="LHS数据准备" loading="lazy">
+              <p class="fig-caption">图4：拉丁超立方抽样（LHS）生成训练数据——5 个输入参数</p>
+            </div>
+            <div class="point-hero-item">
+              <img src="未发表的成果/图片5一共1000个样本、五个输入参数、13个输出参数.png" alt="1000样本13输出" loading="lazy">
+              <p class="fig-caption">图5：1000 组 LHS 样本——5 输入参数 → 13 输出参数</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 研究点三 -->
+        <div class="card fade-in" style="margin-bottom: 28px;">
+          <h3 class="research-stage-title" style="margin-top: 0;">凝胶材料 QC 多尺度模拟</h3>
+          <p style="margin-bottom: 16px;">研究生阶段初期课题为凝胶材料的多尺度力学模拟，方法为<strong>QC（Quasi-Continuum）法</strong>。掌握了整套 QC 程序的运行与调试流程——该方法在全离散（fully-resolved）区域保留原子级细节，在连续介质区域进行粗粒化缩减，通过过渡区衔接实现计算精度与效率的平衡（下图对比了带孔板的全离散与 QC 两种模拟方案）。在此基础上尝试引入凝胶链间的<strong>结合水与自由水</strong>的物理区分，模拟了外力作用下水的挤出行为（见下方两个模拟视频），探索了含水凝胶的微观力学响应。</p>
+          <div class="point-hero-row">
+            <div class="point-hero-item">
+              <img src="未发表的成果/图片带孔板全离散.png" alt="带孔板全离散" loading="lazy">
+              <p class="fig-caption">带孔板全离散（fully-resolved）模拟——保留全部原子级细节</p>
+            </div>
+            <div class="point-hero-item">
+              <img src="未发表的成果/图片带孔板QC.png" alt="带孔板QC" loading="lazy">
+              <p class="fig-caption">带孔板 QC 模拟——仅在关注区域保留细节，其余区域粗粒化缩减</p>
+            </div>
+          </div>
+          <div class="point-hero-row" style="margin-top: 16px;">
+            <div class="point-hero-item">
+              <video src="未发表的成果/模拟凝胶中水的挤出1.mp4" controls preload="metadata" style="width: 100%; border-radius: 4px; display: block;">
+                您的浏览器不支持视频播放。
+              </video>
+              <p class="fig-caption">模拟凝胶中水的挤出 — 算例 1</p>
+            </div>
+            <div class="point-hero-item">
+              <video src="未发表的成果/模拟凝胶中水的挤出2.mp4" controls preload="metadata" style="width: 100%; border-radius: 4px; display: block;">
+                您的浏览器不支持视频播放。
+              </video>
+              <p class="fig-caption">模拟凝胶中水的挤出 — 算例 2</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Publications -->
     <section id="publications">
       <div class="container">
@@ -707,6 +854,7 @@
         <div class="honors-group">
           <h3 class="honors-year">2024</h3>
           <ul class="honors-list">
+            <li>南京林业大学优秀本科毕业论文</li>
             <li>第二届全国高校土建类学科（专业）优秀学位论文和优秀毕业设计（本科组）三等奖</li>
             <li>周培源大学生力学竞赛优秀奖</li>
           </ul>
